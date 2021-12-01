@@ -12,7 +12,7 @@ Built using Deno.
 ## 📦 Importing
 
 ```typescript
-import { Database } from "https://deno.land/x/aloedb@0.9.0/mod.ts";
+import { createHTML } from "https://raw.githubusercontent.com/wkirk01/md2html/master/mod.ts";
 ```
 
 ## 📖 Example Usage
