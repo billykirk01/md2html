@@ -23,7 +23,7 @@ Markdown saved locally
 markdownToHTML("./README.md", "./local.html");
 ```
 
-or from a remote URL
+Markdown from a remote URL
 
 ```typescript
 markdownToHTML(
@@ -34,8 +34,16 @@ markdownToHTML(
 
 ## 🚀 Using the CLI
 
+Install
+
 ```shell
 deno install -n md2html -A --unstable https://raw.githubusercontent.com/wkirk01/md2html/master/cli.ts
+```
+
+Usage
+
+```shell
+md2html <markdown location> <html location>
 ```
 
 Markdown saved locally
@@ -44,7 +52,7 @@ Markdown saved locally
 md2html ./README.md ./local.html
 ```
 
-or from a remote URL
+Markdown from a remote URL
 
 ```shell
 md2html https://raw.githubusercontent.com/wkirk01/md2html/master/README.md ./remote.html
