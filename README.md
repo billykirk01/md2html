@@ -43,17 +43,19 @@ deno install -n md2html -A --unstable https://raw.githubusercontent.com/wkirk01/
 Usage
 
 ```shell
-md2html <markdown location> <html location>
+md2html MARKDOWN_LOCATION HTML_SAVE_LOCATION
 ```
 
-Markdown saved locally
+Command line mode
 
 ```shell
-md2html ./README.md ./local.html
+md2html ./README.md ./index.html
 ```
 
-Markdown from a remote URL
+Interactive mode
 
 ```shell
-md2html https://raw.githubusercontent.com/wkirk01/md2html/master/README.md ./remote.html
+$ md2html       
+ ? Markdown Location (local file or remote url) › https://raw.githubusercontent.com/wkirk01/md2html/master/README.md
+ ? HTML Save Location › ./index.html
 ```
