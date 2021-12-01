@@ -1,4 +1,4 @@
-export async function createHTML(input: string | URL, output: string | URL) {
+export async function createHTML(input: string | URL, output: string) {
     const markdown = await getMarkdown(input);
     const html = await transformMarkdown(markdown);
     await writeHTMLToFile(html, output);
@@ -20,7 +20,7 @@ async function transformMarkdown(markdown: string) {
     return response.text();
 }
 
-async function writeHTMLToFile(htmlBody: string, output: string | URL) {
+async function writeHTMLToFile(htmlBody: string, output: string) {
     const template = `<!DOCTYPE html>
     <html lang="en">
     
@@ -37,14 +37,14 @@ async function writeHTMLToFile(htmlBody: string, output: string | URL) {
     </article>
     
     </html>`;
-    await Deno.writeTextFile(serializeURL(output), template);
+    await Deno.writeTextFile(output, template);
 }
 
-function serializeURL(input: string | URL) {
-    if (typeof input === "string") {
-        return new URL(input, import.meta.url);
+function serializeURL(url: string | URL) {
+    if (typeof url === "string") {
+        return new URL(url, import.meta.url);
     }
-    return input;
+    return url;
 }
 
 
