@@ -56,6 +56,6 @@ Interactive mode
 
 ```shell
 $ md2html       
- ? Markdown Location (local file or remote url) › https://raw.githubusercontent.com/wkirk01/md2html/master/README.md
+ ? Markdown Location (local file or remote url) › ./README.md
  ? HTML Save Location › ./index.html
 ```
