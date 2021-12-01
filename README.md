@@ -12,7 +12,7 @@ Built using Deno.
 ## 📦 Importing
 
 ```typescript
-import { createHTML } from "https://raw.githubusercontent.com/wkirk01/md2html/master/mod.ts";
+import { markdownToHTML } from "https://raw.githubusercontent.com/wkirk01/md2html/master/mod.ts";
 ```
 
 ## 📖 Example Usage
@@ -20,13 +20,13 @@ import { createHTML } from "https://raw.githubusercontent.com/wkirk01/md2html/ma
 Markdown saved locally
 
 ```typescript
-createHTML("./README.md", "./local.html");
+markdownToHTML("./README.md", "./local.html");
 ```
 
 or from a remote URL
 
 ```typescript
-createHTML(
+markdownToHTML(
   "https://raw.githubusercontent.com/wkirk01/md2html/master/README.md",
   "./remote.html",
 );

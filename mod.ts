@@ -1,4 +1,4 @@
-export async function createHTML(input: string | URL, output: string) {
+export async function markdownToHTML(input: string | URL, output: string) {
     const markdown = await getMarkdown(input);
     const html = await transformMarkdown(markdown);
     await writeHTMLToFile(html, output);
