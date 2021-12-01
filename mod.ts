@@ -46,7 +46,3 @@ function serializeURL(url: string | URL) {
     }
     return url;
 }
-
-
-
-
