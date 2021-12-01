@@ -36,8 +36,16 @@ markdownToHTML(
 
 ```shell
 deno install -n md2html -A --unstable https://raw.githubusercontent.com/wkirk01/md2html/master/cli.ts
+```
 
+Markdown saved locally
+
+```shell
 md2html ./README.md ./local.html
+```
 
+or from a remote URL
+
+```shell
 md2html https://raw.githubusercontent.com/wkirk01/md2html/master/README.md ./remote.html
 ```
