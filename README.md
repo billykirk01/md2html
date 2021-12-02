@@ -37,7 +37,7 @@ markdownToHTML(
 Install
 
 ```shell
-deno install -n md2html -A --unstable https://raw.githubusercontent.com/wkirk01/md2html/master/cli.ts
+deno install -n md2html -A --unstable https://deno.land/x/md2html/cli.ts
 ```
 
 Usage
