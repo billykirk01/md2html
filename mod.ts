@@ -41,8 +41,8 @@ async function writeHTMLToFile(htmlBody: string, output: string) {
 }
 
 function serializeURL(url: string | URL) {
-    if (typeof url === "string") {
-        return new URL(url, import.meta.url);
-    }
+//     if (typeof url === "string") {
+//         return new URL(url, import.meta.url);
+//     }
     return url;
 }
