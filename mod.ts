@@ -1,3 +1,5 @@
+import {toFileUrl, join} from "https://deno.land/std@0.117.0/path/mod.ts";
+
 export async function markdownToHTML(input: string | URL, output: string) {
     const markdown = await getMarkdown(input);
     const html = await transformMarkdown(markdown);
@@ -42,7 +44,7 @@ async function writeHTMLToFile(htmlBody: string, output: string) {
 
 function serializeURL(url: string | URL) {
     if (typeof url === "string" && !url.includes("http")) {
-        return new URL(url,"File://" + Deno.cwd())
+        return toFileUrl(join(Deno.cwd(), url));
     }
     return url;
 }
