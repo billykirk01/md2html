@@ -4,10 +4,9 @@ import {
   toFileUrl,
 } from "https://deno.land/std@0.117.0/path/mod.ts";
 
-export async function markdownToHTML(input: string | URL, output: string) {
+export async function markdownToHTML(input: string | URL) {
   const markdown = await getMarkdown(input);
-  const html = await transformMarkdown(markdown);
-  await writeHTMLToFile(html, output);
+  return transformMarkdown(markdown);
 }
 
 async function getMarkdown(input: string | URL) {
@@ -21,29 +20,24 @@ async function transformMarkdown(markdown: string) {
     headers: {
       "Accept": "application/vnd.github.v3+json",
     },
-    body: JSON.stringify({ "text": markdown }),
+    body: JSON.stringify({"text": markdown}),
   });
-  return response.text();
-}
-
-async function writeHTMLToFile(htmlBody: string, output: string) {
-  const template = `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html lang="en">
     
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Markdown</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown.min.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Markdown</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.0.0/github-markdown.min.css">
     </head>
     
     <article class="markdown-body">
-    ${htmlBody}
+      ${ await response.text() }
     </article>
     
     </html>`;
-  await Deno.writeTextFile(output, template);
 }
 
 function serializeURL(url: string | URL) {
