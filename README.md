@@ -36,7 +36,7 @@ const html = await markdownToHTML(
 Install
 
 ```shell
-deno install -n md2html -A https://deno.land/x/md2html/cli.ts
+deno install -n md2html -A --unstable https://deno.land/x/md2html/cli.ts
 ```
 
 Usage
