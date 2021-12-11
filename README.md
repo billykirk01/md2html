@@ -20,15 +20,14 @@ import { markdownToHTML } from "https://deno.land/x/md2html/mod.ts";
 Markdown saved locally
 
 ```typescript
-markdownToHTML("./README.md", "./local.html");
+const html = await markdownToHTML("./README.md");
 ```
 
 Markdown from a remote URL
 
 ```typescript
-markdownToHTML(
+const html = await markdownToHTML(
   "https://raw.githubusercontent.com/wkirk01/md2html/master/README.md",
-  "./remote.html",
 );
 ```
 
@@ -37,7 +36,7 @@ markdownToHTML(
 Install
 
 ```shell
-deno install -n md2html -A --unstable https://deno.land/x/md2html/cli.ts
+deno install -n md2html -A https://deno.land/x/md2html/cli.ts
 ```
 
 Usage
